@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/app_route.git/static/css/main.9692ca23.css",
+    "main.js": "/app_route.git/static/js/main.b53611b2.js",
+    "static/js/453.a33973f4.chunk.js": "/app_route.git/static/js/453.a33973f4.chunk.js",
+    "index.html": "/app_route.git/index.html",
+    "main.9692ca23.css.map": "/app_route.git/static/css/main.9692ca23.css.map",
+    "main.b53611b2.js.map": "/app_route.git/static/js/main.b53611b2.js.map",
+    "453.a33973f4.chunk.js.map": "/app_route.git/static/js/453.a33973f4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9692ca23.css",
+    "static/js/main.b53611b2.js"
+  ]
+}
