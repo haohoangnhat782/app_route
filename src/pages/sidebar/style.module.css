@@ -1,19 +1,12 @@
-.container {
-  display: flex;
-}
-
 .sidebarContainer {
   width: 250px;
   background-color: #f7fafc;
   padding: 20px;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
   box-shadow: 2px 0 10px rgba(0, 0, 0, 0.05);
-}
-
-.content {
-  flex: 1;
-  padding: 20px;
-  overflow-y: auto;
 }
 
 .title {

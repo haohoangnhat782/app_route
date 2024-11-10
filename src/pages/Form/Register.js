@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./FormStyles.css";
+import styles from "./FormStyles.module.css";
+import clsx from "clsx";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -33,9 +34,9 @@ function Register() {
   };
 
   return (
-    <div className="form-container">
+    <div className={clsx(styles["form-container"])}>
       <h2>Đăng Ký</h2>
-      {success && <p className="success">{success}</p>}
+      {success && <p className={clsx(styles.success)}>{success}</p>}
 
       <form onSubmit={handleRegister}>
         <input
@@ -43,36 +44,48 @@ function Register() {
           placeholder="User Name"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
+          className={clsx(styles.input)}
         />
-        {errors.userName && <p className="error">{errors.userName}</p>}
+        {errors.userName && (
+          <p className={clsx(styles.error)}>{errors.userName}</p>
+        )}
 
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className={clsx(styles.input)}
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {errors.email && <p className={clsx(styles.error)}>{errors.email}</p>}
 
         <input
           type="text"
           placeholder="Phone"
           value={sdt}
           onChange={(e) => setSdt(e.target.value)}
+          className={clsx(styles.input)}
         />
-        {errors.sdt && <p className="error">{errors.sdt}</p>}
+        {errors.sdt && <p className={clsx(styles.error)}>{errors.sdt}</p>}
 
         <input
           type="password"
           placeholder="Mật khẩu"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className={clsx(styles.input)}
         />
-        {errors.password && <p className="error">{errors.password}</p>}
+        {errors.password && (
+          <p className={clsx(styles.error)}>{errors.password}</p>
+        )}
 
-        <button type="submit">Đăng Ký</button>
+        <button type="submit" className={clsx(styles.button)}>
+          Đăng Ký
+        </button>
         <p>
-          <Link to="/login">Đăng Nhập</Link>
+          <Link to="/login" className={clsx(styles.link)}>
+            Đăng Nhập
+          </Link>
         </p>
       </form>
     </div>

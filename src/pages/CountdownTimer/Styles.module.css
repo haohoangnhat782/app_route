@@ -1,0 +1,42 @@
+/* Styles.module.css */
+.container {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.count {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.buttonContainer {
+  display: flex;
+  gap: 10px;
+}
+
+.button {
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button:active {
+  background-color: #003d80;
+}

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./FormStyles.css";
-
+import styles from "./FormStyles.module.css";
+import clsx from "clsx";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -30,30 +30,39 @@ function Login() {
   };
 
   return (
-    <div className="form-container">
+    <div className={clsx(styles["form-container"])}>
       <h2>Đăng Nhập</h2>
       <form onSubmit={handleLogin}>
-        {success && <p className="success">{success}</p>}
+        {success && <p className={clsx(styles.success)}>{success}</p>}
 
         <input
           type="email"
           placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          className={clsx(styles.input)}
         />
-        {errors.email && <p className="error">{errors.email}</p>}
+        {errors.email && <p className={clsx(styles.error)}>{errors.email}</p>}
 
         <input
           type="password"
           placeholder="Mật khẩu"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          className={clsx(styles.input)}
         />
-        {errors.password && <p className="error">{errors.password}</p>}
+        {errors.password && (
+          <p className={clsx(styles.error)}>{errors.password}</p>
+        )}
 
-        <button type="submit">Đăng Nhập</button>
+        <button type="submit" className={clsx(styles.button)}>
+          Đăng Nhập
+        </button>
         <p>
-          Chưa có tài khoản? <Link to="/register">Đăng Ký</Link>
+          Chưa có tài khoản?{" "}
+          <Link to="/register" className={clsx(styles.link)}>
+            Đăng Ký
+          </Link>
         </p>
       </form>
     </div>
